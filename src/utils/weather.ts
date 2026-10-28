@@ -1,4 +1,25 @@
-import type { TemperatureUnit, WeatherCondition } from '../types/weather';
+import {
+  Cloud,
+  CloudDrizzle,
+  CloudFog,
+  CloudLightning,
+  CloudRain,
+  CloudSnow,
+  CloudSun,
+  Sun,
+} from 'lucide-react';
+import type { TemperatureUnit, WeatherCondition, WeatherIconName } from '../types/weather';
+
+export const ICONS: Record<WeatherIconName, React.ComponentType<{ className?: string }>> = {
+  sun: Sun,
+  cloudSun: CloudSun,
+  cloud: Cloud,
+  fog: CloudFog,
+  drizzle: CloudDrizzle,
+  rain: CloudRain,
+  snow: CloudSnow,
+  storm: CloudLightning,
+};
 
 export function getWeatherCondition(code: number): WeatherCondition {
   if (code === 0) {
@@ -6,9 +27,6 @@ export function getWeatherCondition(code: number): WeatherCondition {
       label: 'Trời quang',
       icon: '☀️',
       iconName: 'sun',
-      theme: 'clear',
-      gradient: 'from-amber-400 via-orange-400 to-sky-500',
-      bgClass: 'bg-gradient-to-br from-amber-500/20 to-sky-600/30',
     };
   }
   if (code === 1) {
@@ -16,9 +34,6 @@ export function getWeatherCondition(code: number): WeatherCondition {
       label: 'Ít mây',
       icon: '🌤️',
       iconName: 'cloudSun',
-      theme: 'clear',
-      gradient: 'from-blue-400 via-sky-400 to-indigo-500',
-      bgClass: 'bg-gradient-to-br from-sky-400/20 to-indigo-600/30',
     };
   }
   if (code === 2) {
@@ -26,9 +41,6 @@ export function getWeatherCondition(code: number): WeatherCondition {
       label: 'Có mây rải rác',
       icon: '⛅',
       iconName: 'cloudSun',
-      theme: 'cloudy',
-      gradient: 'from-blue-400 via-sky-400 to-indigo-500',
-      bgClass: 'bg-gradient-to-br from-sky-400/20 to-indigo-600/30',
     };
   }
   if (code === 3) {
@@ -36,9 +48,6 @@ export function getWeatherCondition(code: number): WeatherCondition {
       label: 'Nhiều mây',
       icon: '☁️',
       iconName: 'cloud',
-      theme: 'cloudy',
-      gradient: 'from-slate-400 via-gray-500 to-slate-700',
-      bgClass: 'bg-gradient-to-br from-slate-500/20 to-gray-700/30',
     };
   }
   if ([45, 48].includes(code)) {
@@ -46,9 +55,6 @@ export function getWeatherCondition(code: number): WeatherCondition {
       label: 'Sương mù',
       icon: '🌫️',
       iconName: 'fog',
-      theme: 'fog',
-      gradient: 'from-teal-400 via-slate-400 to-gray-600',
-      bgClass: 'bg-gradient-to-br from-teal-500/20 to-slate-700/30',
     };
   }
   if ([51, 53, 55, 56, 57].includes(code)) {
@@ -56,9 +62,6 @@ export function getWeatherCondition(code: number): WeatherCondition {
       label: 'Mưa phùn',
       icon: '🌦️',
       iconName: 'drizzle',
-      theme: 'rain',
-      gradient: 'from-cyan-500 via-blue-500 to-slate-600',
-      bgClass: 'bg-gradient-to-br from-cyan-500/20 to-blue-700/30',
     };
   }
   if ([61, 63, 65, 66, 67, 80, 81, 82].includes(code)) {
@@ -66,9 +69,6 @@ export function getWeatherCondition(code: number): WeatherCondition {
       label: 'Có mưa',
       icon: '🌧️',
       iconName: 'rain',
-      theme: 'rain',
-      gradient: 'from-blue-600 via-indigo-600 to-slate-800',
-      bgClass: 'bg-gradient-to-br from-blue-600/20 to-indigo-800/30',
     };
   }
   if ([71, 73, 75, 77, 85, 86].includes(code)) {
@@ -76,9 +76,6 @@ export function getWeatherCondition(code: number): WeatherCondition {
       label: 'Có tuyết',
       icon: '❄️',
       iconName: 'snow',
-      theme: 'snow',
-      gradient: 'from-indigo-300 via-sky-300 to-slate-500',
-      bgClass: 'bg-gradient-to-br from-sky-300/20 to-indigo-500/30',
     };
   }
   if ([95, 96, 99].includes(code)) {
@@ -86,18 +83,12 @@ export function getWeatherCondition(code: number): WeatherCondition {
       label: 'Dông',
       icon: '⛈️',
       iconName: 'storm',
-      theme: 'storm',
-      gradient: 'from-purple-700 via-indigo-800 to-slate-900',
-      bgClass: 'bg-gradient-to-br from-purple-800/30 to-slate-950/50',
     };
   }
   return {
     label: 'Chưa xác định',
     icon: '🌡️',
     iconName: 'cloudSun',
-    theme: 'cloudy',
-    gradient: 'from-blue-500 via-indigo-500 to-slate-700',
-    bgClass: 'bg-gradient-to-br from-blue-500/20 to-slate-700/30',
   };
 }
 

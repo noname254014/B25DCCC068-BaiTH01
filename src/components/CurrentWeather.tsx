@@ -1,31 +1,12 @@
 import {
-  Cloud,
-  CloudDrizzle,
-  CloudFog,
-  CloudLightning,
-  CloudRain,
-  CloudSnow,
-  CloudSun,
   Droplets,
   MapPin,
   RefreshCw,
   Star,
-  Sun,
   Wind,
 } from 'lucide-react';
 import type { City, TemperatureUnit, WeatherResponse } from '../types/weather';
-import { formatTemperature, formatUpdatedAt, getWeatherCondition } from '../utils/weather';
-
-const ICONS: Record<string, any> = {
-  sun: Sun,
-  cloudSun: CloudSun,
-  cloud: Cloud,
-  fog: CloudFog,
-  drizzle: CloudDrizzle,
-  rain: CloudRain,
-  snow: CloudSnow,
-  storm: CloudLightning,
-};
+import { ICONS, formatTemperature, formatUpdatedAt, getWeatherCondition } from '../utils/weather';
 
 interface CurrentWeatherProps {
   city: City;

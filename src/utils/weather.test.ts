@@ -9,7 +9,7 @@ import {
 describe('getWeatherCondition', () => {
   it('maps clear, rain, and thunderstorm weather codes', () => {
     expect(getWeatherCondition(0).label).toBe('Trời quang');
-    expect(getWeatherCondition(63).theme).toBe('rain');
+    expect(getWeatherCondition(63).label).toBe('Có mưa');
     expect(getWeatherCondition(95).label).toBe('Dông');
   });
 });

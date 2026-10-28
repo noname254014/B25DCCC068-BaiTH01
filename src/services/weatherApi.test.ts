@@ -39,4 +39,14 @@ describe('fetchWeather', () => {
     vi.spyOn(globalThis, 'fetch').mockResolvedValue(new Response('', { status: 503 }));
     await expect(fetchWeather(CITIES[0])).rejects.toThrow('HTTP 503');
   });
+
+  it('returns parsed weather data on success', async () => {
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue(
+      new Response(JSON.stringify(mockResponse), { status: 200 }),
+    );
+    const result = await fetchWeather(CITIES[0]);
+    expect(result.current.temperature_2m).toBe(28);
+    expect(result.current.weather_code).toBe(1);
+    expect(result.daily.time).toHaveLength(7);
+  });
 });

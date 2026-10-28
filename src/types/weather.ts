@@ -32,8 +32,6 @@ export interface WeatherResponse {
 
 export type TemperatureUnit = 'celsius' | 'fahrenheit';
 
-export type WeatherTheme = 'clear' | 'cloudy' | 'rain' | 'storm' | 'snow' | 'fog';
-
 export type WeatherIconName =
   | 'sun'
   | 'cloudSun'
@@ -48,7 +46,4 @@ export interface WeatherCondition {
   label: string;
   icon: string;
   iconName: WeatherIconName;
-  theme: WeatherTheme;
-  gradient: string;
-  bgClass: string;
 }

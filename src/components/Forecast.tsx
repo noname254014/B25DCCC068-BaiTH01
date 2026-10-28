@@ -1,27 +1,6 @@
-import {
-  Calendar,
-  Cloud,
-  CloudDrizzle,
-  CloudFog,
-  CloudLightning,
-  CloudRain,
-  CloudSnow,
-  CloudSun,
-  Sun,
-} from 'lucide-react';
+import { Calendar } from 'lucide-react';
 import type { TemperatureUnit, WeatherResponse } from '../types/weather';
-import { formatDay, formatTemperature, getWeatherCondition } from '../utils/weather';
-
-const ICONS: Record<string, any> = {
-  sun: Sun,
-  cloudSun: CloudSun,
-  cloud: Cloud,
-  fog: CloudFog,
-  drizzle: CloudDrizzle,
-  rain: CloudRain,
-  snow: CloudSnow,
-  storm: CloudLightning,
-};
+import { ICONS, formatDay, formatTemperature, getWeatherCondition } from '../utils/weather';
 
 interface ForecastProps {
   data: WeatherResponse;
