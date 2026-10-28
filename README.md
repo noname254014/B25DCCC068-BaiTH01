@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # B25DCCC068-BaiTH01
 # BaiTH02 — Khí Tượng
 ## Yêu cầu
@@ -11,3 +12,6 @@ Mở địa chỉ Vite in ra trong terminal (thường là `http://localhost:517
 - `npm test`: chạy Vitest.
 - `npm run build`: kiểm tra TypeScript và tạo bản build trong `dist/`.
 - `npm run preview`: chạy thử bản production.
+=======
+"# B25DCCC068-BaiTH02" 
+>>>>>>> c034c0acbec26600005356fd3a176e8625d4b31a
