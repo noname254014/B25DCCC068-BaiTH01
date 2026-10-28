@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-# B25DCCC068-BaiTH01
 # BaiTH02 — Khí Tượng
 ## Yêu cầu
 - Node.js 20.19+ hoặc 22.12+ (khuyến nghị bản LTS).
